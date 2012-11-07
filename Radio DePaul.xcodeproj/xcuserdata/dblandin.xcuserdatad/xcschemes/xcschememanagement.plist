@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>AudioStreamer.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>EGOImageLoading.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>Radio DePaul.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>B317CCF316488DF400E1FBE9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B3958F931648EF2000412C9E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B3958FA41648EFE500412C9E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B3BA7D581649FE6900289A4D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B3BA7D691649FF4B00289A4D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B3D32AF31649FA2800A76629</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B3D32B341649FB0400A76629</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B3D32B451649FC6800A76629</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B3D32B5B1649FD6900A76629</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
