@@ -1,0 +1,14 @@
+
+PODS:
+- SDWebImage (2.7):
+  - SDWebImage/Main (= 2.7)
+- SDWebImage/Main (2.7)
+
+DEPENDENCIES:
+- SDWebImage (~> 2.7)
+
+SPEC CHECKSUMS:
+  SDWebImage: 6be78ee398d329bdd22c85a0e11ee41bd1f52066
+  SDWebImage/Main: 6be78ee398d329bdd22c85a0e11ee41bd1f52066
+
+COCOAPODS: 0.15.2

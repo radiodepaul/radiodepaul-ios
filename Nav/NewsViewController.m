@@ -48,7 +48,7 @@
 
 - (void) setupUI
 {
-    [self.scrollView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"pattern"]]];
+    //[self.scrollView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"pattern"]]];
 }
 
 @end

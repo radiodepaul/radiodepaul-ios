@@ -8,8 +8,11 @@
 
 #import "ListenViewController.h"
 #import <MediaPlayer/MediaPlayer.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 
-@interface ListenViewController ()
+@interface ListenViewController () {
+    MBProgressHUD *hud;
+}
 
 @end
 
@@ -30,69 +33,133 @@
 {
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"pattern"]]];
 }
-- (void) getShowData
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+	UIApplication *application = [UIApplication sharedApplication];
+	if([application respondsToSelector:@selector(beginReceivingRemoteControlEvents)])
+		[application beginReceivingRemoteControlEvents];
+	[self becomeFirstResponder]; // this enables listening for events
+	// update the UI in case we were in the background
+	NSNotification *notification =
+	[NSNotification
+	 notificationWithName:ASStatusChangedNotification
+	 object:self];
+	[[NSNotificationCenter defaultCenter]
+	 postNotification:notification];
+    
+    hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.labelText = @"Loading";
+    NSString *url = [[NSString alloc] initWithString:@"http://radiodepaul.herokuapp.com/api/?getOnAir.json"];
+    
+    NSURLRequest *theRequest=[NSURLRequest requestWithURL:[NSURL URLWithString:url]
+                                              cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                          timeoutInterval:60.0];
+    // create the connection with the request
+    // and start loading the data
+    NSURLConnection *theConnection=[[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
+    if (theConnection) {
+        // Create the NSMutableData to hold the received data.
+        // receivedData is an instance variable declared elsewhere.
+        receivedData = [[NSMutableData data] retain];
+    } else {
+        // Inform the user that the connection failed.
+    }
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+{
+    // This method is called when the server has determined that it
+    // has enough information to create the NSURLResponse.
+    
+    // It can be called multiple times, for example in the case of a
+    // redirect, so each time we reset the data.
+    
+    // receivedData is an instance variable declared elsewhere.
+    [receivedData setLength:0];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    // Append the new data to receivedData.
+    // receivedData is an instance variable declared elsewhere.
+    [receivedData appendData:data];
+}
+
+- (void)connection:(NSURLConnection *)connection
+  didFailWithError:(NSError *)error
+{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    // release the connection, and the data object
+    [connection release];
+    // receivedData is declared as a method instance elsewhere
+    [receivedData release];
+    
+    // inform the user
+    NSLog(@"Connection failed! Error - %@ %@",
+          [error localizedDescription],
+          [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]);
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    // do something with the data
+    // receivedData is declared as a method instance elsewhere
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    NSLog(@"Succeeded! Received %d bytes of data",[receivedData length]);
+    
+    [self displayShowData];
+    // release the connection, and the data object
+    [connection release];
+    [receivedData release];
+    
+}
+
+- (void) displayShowData
 {
     NSError *e = nil;
     NSString *url = @"http://radiodepaul.herokuapp.com/api/getOnAir.json";
     NSData *data = [[NSData alloc] initWithContentsOfURL:[[NSURL alloc] initWithString:url]];
-    NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData: data options: NSJSONReadingMutableContainers error: &e];
+    NSDictionary *onAirSlot = [NSJSONSerialization JSONObjectWithData: data options: NSJSONReadingMutableContainers error: &e];
     
-    if (!jsonArray) {
-        NSLog(@"Error parsing JSON: %@", e);
-    } else {
-        for(NSDictionary *item in jsonArray) {
-            NSDictionary *show = [item objectForKey:@"show"];
-            //NSDictionary *genres = [show objectForKey:@"genre"];
-            NSArray *hosts = [show objectForKey:@"hosts"];
-            NSArray *days = [item objectForKey:@"days"];
-            
-            NSLog(@"%@", [show objectForKey:@"title"]);
-            showTitle.text = [show objectForKey:@"title"];
-            NSLog(@"%@", [show objectForKey:@"quarter"]);
-            NSLog(@"%@", [show objectForKey:@"photo"]);
-            NSData *image = [[NSData alloc] initWithContentsOfURL:[[NSURL alloc] initWithString:[show objectForKey:@"photo"]]];
-            showImage.image = [[UIImage alloc] initWithData:image];
-            [showImage.layer setBorderWidth:5.0f];
-            [showImage.layer setBorderColor:[[UIColor whiteColor] CGColor]];
-            [showImage.layer setShadowRadius:5.0f];
-            [showImage.layer setShadowOpacity:.85f];
-            [showImage.layer setShadowOffset:CGSizeMake(1.0f, 2.0f)];
-            [showImage.layer setShadowColor:[[UIColor blackColor] CGColor]];
-            [showImage.layer setShouldRasterize:YES];
-            [showImage.layer setMasksToBounds:NO];
-            
-            NSLog(@"%@", [show objectForKey:@"id"]);
-            
-            NSString *genresString = @"";
-            //for(NSString *genre in genres)
-            //{
-            //    NSLog(@"%@", genre);
-            //    genresString = [genresString stringByAppendingString:[NSString stringWithFormat:@"%@ ", genre]];
-            //}
-            showGenres.text = genresString;
-            
-            for(NSString *day in days)
-            {
-                NSLog(@"%@", day);
-            }
-            
-            for(NSDictionary *host in hosts)
-            {
-                NSLog(@"%@", [host objectForKey:@"name"]);
-                NSLog(@"%@", [host objectForKey:@"id"]);
-                NSLog(@"%@", [host objectForKey:@"photo_thumb"]);
-            }
-            NSLog(@"%@", [show objectForKey:@"short_description"]);
-            showDescription.text = [show objectForKey:@"short_description"];
-            
-            NSLog(@"%@", [item objectForKey:@"start_time"]);
-            NSLog(@"%@", [item objectForKey:@"end_time"]);
-            showStartTime.text = [item objectForKey:@"start_time"];
-            showEndTime.text = [item objectForKey:@"end_time"];
-            
-            
+        NSDictionary *show = [onAirSlot objectForKey:@"show"];
+        //NSDictionary *genres = [show objectForKey:@"genre"];
+        NSArray *hosts = [show objectForKey:@"hosts"];
+        NSArray *days = [onAirSlot objectForKey:@"days"];
+        
+        showTitle.text = [show objectForKey:@"title"];
+        [showImage setImageWithURL:[NSURL URLWithString:[show objectForKey:@"photo_medium"]]
+                       placeholderImage:[UIImage imageNamed:@"placeholder_small"]];
+        [showImage.layer setBorderWidth:5.0f];
+        [showImage.layer setBorderColor:[[UIColor whiteColor] CGColor]];
+        [showImage.layer setShadowRadius:5.0f];
+        [showImage.layer setShadowOpacity:.85f];
+        [showImage.layer setShadowOffset:CGSizeMake(1.0f, 2.0f)];
+        [showImage.layer setShadowColor:[[UIColor blackColor] CGColor]];
+        [showImage.layer setShouldRasterize:YES];
+        [showImage.layer setMasksToBounds:NO];
+        
+        NSString *genresString = @"";
+        //for(NSString *genre in genres)
+        //{
+        //    NSLog(@"%@", genre);
+        //    genresString = [genresString stringByAppendingString:[NSString stringWithFormat:@"%@ ", genre]];
+        //}
+        showGenres.text = genresString;
+        
+        for(NSString *day in days)
+        {
         }
-    }
+        
+        for(NSDictionary *host in hosts)
+        {
+
+        }
+        showDescription.text = [show objectForKey:@"short_description"];
+        
+        showStartTime.text = [onAirSlot objectForKey:@"start_time"];
+        showEndTime.text = [onAirSlot objectForKey:@"end_time"];
 }
 
 //
@@ -246,15 +313,15 @@
     [TestFlight passCheckpoint:@"Visited Listen View"];
 	
     
-    [self getShowData];
+    //[self getShowData];
     MPVolumeView *volumeView = [[MPVolumeView alloc] initWithFrame:volumeSlider.bounds];
 	[volumeSlider addSubview:volumeView];
 	[volumeView sizeToFit];
 	
 	[self setButtonImage:[UIImage imageNamed:@"playbutton.png"]];
 	
-	levelMeterView = [[LevelMeterView alloc] initWithFrame:CGRectMake(10.0, 280.0, 300.0, 60.0)];
-	[self.view addSubview:levelMeterView];
+	//levelMeterView = [[LevelMeterView alloc] initWithFrame:CGRectMake(10.0, 280.0, 300.0, 60.0)];
+	//[self.view addSubview:levelMeterView];
 }
 
 - (void)viewDidUnload
@@ -269,21 +336,6 @@
     volumeSlider = nil;
     volumeSlider = nil;
     [self createTimers:NO];
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-	[super viewDidAppear:animated];
-	UIApplication *application = [UIApplication sharedApplication];
-	if([application respondsToSelector:@selector(beginReceivingRemoteControlEvents)])
-		[application beginReceivingRemoteControlEvents];
-	[self becomeFirstResponder]; // this enables listening for events
-	// update the UI in case we were in the background
-	NSNotification *notification =
-	[NSNotification
-	 notificationWithName:ASStatusChangedNotification
-	 object:self];
-	[[NSNotificationCenter defaultCenter]
-	 postNotification:notification];
 }
 
 - (BOOL)canBecomeFirstResponder {

@@ -51,7 +51,7 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
-						<object class="NSColor" key="IBUIHighlightedTitleColor">
+						<object class="NSColor" key="IBUIHighlightedTitleColor" id="1010014383">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MQA</bytes>
 						</object>
@@ -85,7 +85,7 @@
 						<string key="NSFrame">{{80, 370}, {220, 26}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<object class="NSColor" key="IBUIBackgroundColor" id="364017118">
+						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MCAwAA</bytes>
 						</object>
@@ -95,7 +95,7 @@
 					<object class="IBUILabel" id="1026657902">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{127, 75}, {173, 30}}</string>
+						<string key="NSFrame">{{20, 230}, {280, 40}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="604913355"/>
@@ -129,7 +129,7 @@
 					<object class="IBUILabel" id="831719737">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 182}, {280, 80}}</string>
+						<string key="NSFrame">{{20, 278}, {280, 70}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="319202458"/>
@@ -161,7 +161,7 @@
 					<object class="IBUILabel" id="604913355">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{127, 103}, {173, 43}}</string>
+						<string key="NSFrame">{{178, 132}, {122, 83}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="831719737"/>
@@ -189,7 +189,7 @@
 					<object class="IBUIImageView" id="884475333">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 75}, {99, 99}}</string>
+						<string key="NSFrame">{{20, 65}, {150, 150}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="1026657902"/>
@@ -217,7 +217,7 @@
 					<object class="IBUILabel" id="376719599">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{127, 153}, {80, 21}}</string>
+						<string key="NSFrame">{{178, 74}, {122, 21}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -247,7 +247,7 @@
 					<object class="IBUILabel" id="599445419">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{220, 153}, {80, 21}}</string>
+						<string key="NSFrame">{{178, 103}, {122, 21}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -269,8 +269,7 @@
 				<string key="NSFrame">{{0, 20}, {320, 411}}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView"/>
-				<reference key="IBUIBackgroundColor" ref="364017118"/>
+				<reference key="IBUIBackgroundColor" ref="1010014383"/>
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
 				<object class="IBUISimulatedTabBarMetrics" key="IBUISimulatedBottomBarMetrics"/>
 				<object class="IBUIScreenMetrics" key="IBUISimulatedDestinationMetrics">
@@ -388,15 +387,15 @@
 						<int key="objectID">1</int>
 						<reference key="object" ref="191373211"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="884475333"/>
-							<reference ref="831719737"/>
 							<reference ref="163004689"/>
-							<reference ref="1026657902"/>
-							<reference ref="604913355"/>
-							<reference ref="376719599"/>
-							<reference ref="599445419"/>
 							<reference ref="319202458"/>
 							<reference ref="234093053"/>
+							<reference ref="884475333"/>
+							<reference ref="1026657902"/>
+							<reference ref="376719599"/>
+							<reference ref="599445419"/>
+							<reference ref="604913355"/>
+							<reference ref="831719737"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>

@@ -7,17 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MWPhotoBrowser.h"
 
-@interface DisclosureDetailController : UIViewController
+@interface DisclosureDetailController : UIViewController <MWPhotoBrowserDelegate>
 
 @property (strong, nonatomic) IBOutlet UILabel *label;
-@property (copy, nonatomic) NSString *message;
-@property (copy, nonatomic) NSString *show_id;
 @property (strong, nonatomic) IBOutlet UILabel *showTitle;
 @property (strong, nonatomic) IBOutlet UILabel *showGenres;
 @property (strong, nonatomic) IBOutlet UILabel *showDescription;
 @property (strong, nonatomic) IBOutlet UIImageView *showImage;
 @property (strong, nonatomic) IBOutlet UILabel *showSchedule;
-@property (copy, nonatomic) NSDictionary *show;
+@property (strong, nonatomic) IBOutlet UILabel *showStartTime;
+@property (strong, nonatomic) IBOutlet UILabel *showEndTime;
+@property (copy, nonatomic) NSDictionary *slot;
+@property (copy, nonatomic) NSArray *photos;
+- (IBAction)showImageBrowser:(UIButton *)sender;
 
 @end

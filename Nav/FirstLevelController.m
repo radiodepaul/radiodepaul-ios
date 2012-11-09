@@ -11,14 +11,12 @@
 #import "DisclosureButtonController.h"
 
 @interface FirstLevelController ()
-
+@property (strong, nonatomic) DisclosureButtonController *childController;
+@property (strong, nonatomic) NSMutableArray *days;
 @end
 
 @implementation FirstLevelController
-@synthesize controllers;
-
-
-
+@synthesize childController;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -34,37 +32,10 @@
     [super viewDidLoad];
     [TestFlight passCheckpoint:@"Visited Schedule View"];
     self.title = @"Schedule";
-    NSMutableArray *array = [[NSMutableArray alloc] init];
     
+    NSMutableArray *days = [[NSMutableArray alloc] initWithObjects:@"Monday",@"Tuesday",@"Wednesday",@"Thursday",@"Friday",@"Saturday",@"Sunday", nil];
     
-    // Disclosure Button
-    DisclosureButtonController *monday = [[DisclosureButtonController alloc]
-                                                              initWithStyle:UITableViewStylePlain];
-    monday.title = @"Monday";
-    DisclosureButtonController *tuesday = [[DisclosureButtonController alloc]
-                                                              initWithStyle:UITableViewStylePlain];
-    tuesday.title = @"Tuesday";
-    DisclosureButtonController *wednesday = [[DisclosureButtonController alloc]
-                                           initWithStyle:UITableViewStylePlain];
-    wednesday.title = @"Wednesday";
-    DisclosureButtonController *thursday = [[DisclosureButtonController alloc]
-                                           initWithStyle:UITableViewStylePlain];
-    thursday.title = @"Thursday";
-    DisclosureButtonController *friday = [[DisclosureButtonController alloc]
-                                           initWithStyle:UITableViewStylePlain];
-    friday.title = @"Friday";
-    DisclosureButtonController *saturday = [[DisclosureButtonController alloc]
-                                           initWithStyle:UITableViewStylePlain];
-    saturday.title = @"Saturday";
-    DisclosureButtonController *sunday = [[DisclosureButtonController alloc]
-                                           initWithStyle:UITableViewStylePlain];
-    sunday.title = @"Sunday";
-    
-    NSMutableArray *days = [[NSMutableArray alloc] initWithObjects:monday,tuesday,wednesday,thursday,friday,saturday,sunday, nil];
-    [array addObjectsFromArray:days];
-    
-    
-    self.controllers = array;
+    self.days = days;
 }
 
 - (void)viewDidUnload
@@ -85,7 +56,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
-    return [self.controllers count];
+    return [self.days count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
@@ -101,10 +72,7 @@
     }
     // Configure the cell
     NSUInteger row = [indexPath row];
-    SecondLevelController *controller =
-    [controllers objectAtIndex:row];
-    cell.textLabel.text = controller.title;
-    cell.imageView.image = controller.rowImage;
+    cell.textLabel.text = [self.days objectAtIndex:row];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
 }
@@ -153,10 +121,15 @@
 
 - (void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSUInteger row = [indexPath row];
-    SecondLevelController *nextController = [self.controllers
-                                                    objectAtIndex:row];
-    [self.navigationController pushViewController:nextController
+    if (childController == nil) {
+        childController = [[DisclosureButtonController alloc] initWithStyle:UITableViewStylePlain];
+    }
+    
+    childController.day = [[self.days objectAtIndex:[indexPath row]] lowercaseString];
+    childController.title = [self.days objectAtIndex:[indexPath row]];
+    
+    childController.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:childController
                                          animated:YES];
 }
 

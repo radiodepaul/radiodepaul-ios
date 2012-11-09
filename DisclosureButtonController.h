@@ -7,8 +7,12 @@
 //
 
 #import "SecondLevelController.h"
+#import "MBProgressHUD.h"
 
-@interface DisclosureButtonController : SecondLevelController
-@property (strong, nonatomic) NSArray *list;
+@interface DisclosureButtonController : SecondLevelController <MBProgressHUDDelegate> {
+    NSMutableData *receivedData;
+}
+@property (copy, nonatomic) NSArray *list;
+@property (copy, nonatomic) NSString *day;
 
 @end

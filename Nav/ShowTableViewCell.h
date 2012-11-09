@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-@class EGOImageView;
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface ShowTableViewCell : UITableViewCell
 
-- (void)setShowPhoto:(NSString*)showPhoto;
+- (void)setShowPhoto:(NSString*)showPhotoUrl;
 
 @end

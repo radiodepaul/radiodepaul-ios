@@ -14,7 +14,7 @@
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if ((self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])) {
-	
+        self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
 	
     return self;
@@ -27,8 +27,9 @@
     // Configure the view for the selected state
 }
 
-- (void)setShowPhoto:(NSString*)showPhoto {
-	//self.imageView.image = [NSURL URLWithString:showPhoto];
+- (void)setShowPhoto:(NSString*)showPhotoURL {
+	[self.imageView setImageWithURL:[NSURL URLWithString:showPhotoURL]
+                   placeholderImage:[UIImage imageNamed:@"placeholder_thumb"]];
 }
 
 

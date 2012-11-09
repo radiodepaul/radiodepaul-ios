@@ -15,6 +15,7 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import <CFNetwork/CFNetwork.h>
 #import "AppDelegate.h"
+#import "MBProgressHUD.h"
 
 @class AudioStreamer, LevelMeterView;
 
@@ -40,6 +41,7 @@
 	LevelMeterView *levelMeterView;
 	NSString *currentArtist;
 	NSString *currentTitle;
+    NSMutableData *receivedData;
 }
 
 @property (retain) NSString* currentArtist;
@@ -52,6 +54,6 @@
 - (void)createTimers:(BOOL)create;
 - (void)updateProgress:(NSTimer *)updatedTimer;
 - (IBAction)sliderMoved:(UISlider *)aSlider;
-- (void)getShowData;
+- (void)displayShowData;;
 - (void) setupUI;
 @end

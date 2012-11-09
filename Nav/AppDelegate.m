@@ -15,6 +15,7 @@
 #import "AppDelegate.h"
 #import "FirstLevelController.h"
 #import "AudioStreamer.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @implementation AppDelegate
 @synthesize rootController;
@@ -46,7 +47,7 @@
     // Override point for customization after application launch.
     [[NSBundle mainBundle] loadNibNamed:@"TabBarController" owner:self options:nil];
     [self.window addSubview:rootController.view];
-    self.window.backgroundColor = [UIColor whiteColor];
+    //self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
     [[NSNotificationCenter defaultCenter]
@@ -58,8 +59,8 @@
     
     [TestFlight passCheckpoint:@"Launched App"];
     
-    [[UINavigationBar appearance] setBackgroundImage: [UIImage imageNamed:@"MyImageName"] forBarMetrics:UIBarMetricsDefault];
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent animated:YES];
+    //[[UINavigationBar appearance] setBackgroundImage: [UIImage imageNamed:@"MyImageName"] forBarMetrics:UIBarMetricsDefault];
+    //[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent animated:YES];
     return YES;
 }
 

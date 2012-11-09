@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B3958F931648EF2000412C9E"
+               BlueprintIdentifier = "B3958FA41648EFE500412C9E"
                BuildableName = "libAudioStreamer.a"
                BlueprintName = "AudioStreamer"
                ReferencedContainer = "container:Radio DePaul.xcodeproj">

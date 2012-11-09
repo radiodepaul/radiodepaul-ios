@@ -8,8 +8,14 @@
 
 #import "DisclosureDetailController.h"
 #import <QuartzCore/QuartzCore.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+#import "MWPhoto.h"
+#import "MWPhotoBrowser.h"
 
 @interface DisclosureDetailController ()
+{
+    MWPhotoBrowser *browser;
+}
 
 @end
 
@@ -19,8 +25,9 @@
 @synthesize showDescription;
 @synthesize showImage;
 @synthesize showSchedule;
+@synthesize showStartTime;
+@synthesize showEndTime;
 @synthesize label;
-@synthesize message, show_id;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,23 +39,35 @@
 }
 - (void) setupUI;
 {
-    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"pattern"]]];
+    //[self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"pattern"]]];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    self.showTitle.text = [self.show objectForKey:@"title"];
-    self.showDescription.text = [self.show objectForKey:@"short_description"];
-    NSData *image = [NSData alloc];
-    if ([self.show objectForKey:@"photo_data"] != nil)
+
+    browser = nil;
+    NSMutableArray *photosIn = [[NSMutableArray array] init];
+    [photosIn addObject:[MWPhoto photoWithURL:[NSURL URLWithString:[[self.slot objectForKey:@"show"] objectForKey:@"photo_large"]]]];
+    self.photos = [photosIn mutableCopy];
+    NSDictionary *show = [self.slot objectForKey:@"show"];
+    self.title = [show objectForKey:@"title"];
+    self.showTitle.text = [show objectForKey:@"title"];
+    self.showDescription.text = [show objectForKey:@"long_description"];
+    self.showStartTime.text = [self.slot objectForKey:@"start_time"];
+    self.showEndTime.text = [self.slot objectForKey:@"end_time"];
+    self.showSchedule.text = [show objectForKey:@"schedule_at"];
+    if (hasRetinaDisplay)
     {
-        image = [self.show objectForKey:@"photo_data"];
+        NSLog(@"medium image loaded");
+        [showImage setImageWithURL:[NSURL URLWithString:[show objectForKey:@"photo_medium"]]
+                  placeholderImage:[UIImage imageNamed:@"placeholder_small"]];
     }
     else
     {
-        image = [image initWithContentsOfURL:[[NSURL alloc] initWithString:[self.show objectForKey:@"photo"]]];
-        [self.show setValue:image forKey:@"photo_data"];
+        NSLog(@"small image loaded");
+        [showImage setImageWithURL:[NSURL URLWithString:[show objectForKey:@"photo_small"]]
+                  placeholderImage:[UIImage imageNamed:@"placeholder_small"]];
     }
-    showImage.image = [[UIImage alloc] initWithData:image];
+    
     [showImage.layer setBorderWidth:5.0f];
     [showImage.layer setBorderColor:[[UIColor whiteColor] CGColor]];
     [showImage.layer setShadowRadius:5.0f];
@@ -58,6 +77,7 @@
     [showImage.layer setShouldRasterize:YES];
     [showImage.layer setMasksToBounds:NO];
     
+    browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
     [super viewWillAppear:animated];
 }
 
@@ -71,14 +91,14 @@
 
 - (void)viewDidUnload
 {
-    self.label = nil;
-    self.message = nil;
     [self setShowTitle:nil];
     [self setShowGenres:nil];
     [self setShowImage:nil];
     [self setShowDescription:nil];
     [self setShowImage:nil];
     [self setShowSchedule:nil];
+    [self setShowStartTime:nil];
+    [self setShowEndTime:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -88,4 +108,27 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+BOOL hasRetinaDisplay(void)
+{
+    if([[UIScreen mainScreen] respondsToSelector:@selector(scale)])
+        return [[UIScreen mainScreen] scale] == 2.0 ? YES : NO;
+    return NO;
+}
+
+- (NSUInteger)numberOfPhotosInPhotoBrowser:(MWPhotoBrowser *)photoBrowser {
+    return 1;
+}
+
+- (MWPhoto *)photoBrowser:(MWPhotoBrowser *)photoBrowser photoAtIndex:(NSUInteger)index {
+    if (index < self.photos.count)
+        return [self.photos objectAtIndex:index];
+    return nil;
+}
+
+- (IBAction)showImageBrowser:(UIButton *)sender {
+    NSLog(@"%@", self.title);
+    browser.wantsFullScreenLayout = YES; // Decide if you want the photo browser full screen, i.e. whether the status bar is affected (defaults to YES)
+    browser.displayActionButton = YES; // Show action button to save, copy or email photos (defaults to NO)
+    [self.navigationController pushViewController:browser animated:YES];
+}
 @end
