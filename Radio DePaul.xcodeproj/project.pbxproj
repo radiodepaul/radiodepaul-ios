@@ -44,12 +44,10 @@
 		B34A7AF91648B14400CD245F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B34A7AF81648B14400CD245F /* CFNetwork.framework */; };
 		B34A7AFB1648B14900CD245F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B34A7AFA1648B14900CD245F /* AudioToolbox.framework */; };
 		B34A7AFD1648B14D00CD245F /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B34A7AFC1648B14D00CD245F /* MediaPlayer.framework */; };
-		B368F8C4164A0034009A960E /* EGOCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B368F8BB164A0033009A960E /* EGOCache.m */; };
-		B368F8C5164A0034009A960E /* EGOImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B368F8BD164A0034009A960E /* EGOImageButton.m */; };
-		B368F8C6164A0034009A960E /* EGOImageLoadConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = B368F8BF164A0034009A960E /* EGOImageLoadConnection.m */; };
-		B368F8C7164A0034009A960E /* EGOImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = B368F8C1164A0034009A960E /* EGOImageLoader.m */; };
-		B368F8C8164A0034009A960E /* EGOImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B368F8C3164A0034009A960E /* EGOImageView.m */; };
-		B368F8CA164A0097009A960E /* libEGOImageLoading.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3BA7D6A1649FF4B00289A4D /* libEGOImageLoading.a */; };
+		B35DED13164A8D560042C730 /* BugSense-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B35DED12164A8D560042C730 /* BugSense-iOS.framework */; };
+		B38C881C164C72590075A5F5 /* ShowTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B38C881B164C72590075A5F5 /* ShowTableViewCell.m */; };
+		B38C881E164C740E0075A5F5 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = B38C881D164C740E0075A5F5 /* placeholder.png */; };
+		B38C88AC164C86620075A5F5 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B38C88AB164C86620075A5F5 /* ImageIO.framework */; };
 		B3958F501648BEB900412C9E /* ListenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3958F4F1648BEB900412C9E /* ListenViewController.xib */; };
 		B3958F521648BFDA00412C9E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3958F511648BFDA00412C9E /* AVFoundation.framework */; };
 		B3958FA61648EFE500412C9E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B317CCFA16488DF400E1FBE9 /* Foundation.framework */; };
@@ -70,15 +68,11 @@
 		B3958FF41649050D00412C9E /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B3958FF31649050D00412C9E /* logo.png */; };
 		B3958FFE1649088D00412C9E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3958FFD1649088D00412C9E /* SystemConfiguration.framework */; };
 		B3959000164908A000412C9E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B3958FFF164908A000412C9E /* libz.dylib */; };
-		B3959002164908D100412C9E /* BugSense-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3959001164908D100412C9E /* BugSense-iOS.framework */; };
 		B39590071649091600412C9E /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B39590061649091600412C9E /* libTestFlight.a */; };
 		B3959011164909C100412C9E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B3959010164909C100412C9E /* Icon.png */; };
 		B3959013164909C500412C9E /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3959012164909C500412C9E /* Icon@2x.png */; };
 		B3959015164909D400412C9E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B3959014164909D400412C9E /* Default.png */; };
 		B3959017164909D700412C9E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3959016164909D700412C9E /* Default@2x.png */; };
-		B3BA7D6B1649FF4B00289A4D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B317CCFA16488DF400E1FBE9 /* Foundation.framework */; };
-		B3BA7D701649FF4B00289A4D /* EGOImageLoading.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B3BA7D6F1649FF4B00289A4D /* EGOImageLoading.h */; };
-		B3BA7D721649FF4B00289A4D /* EGOImageLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = B3BA7D711649FF4B00289A4D /* EGOImageLoading.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -88,16 +82,6 @@
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B3BA7D681649FF4B00289A4D /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/${PRODUCT_NAME}";
-			dstSubfolderSpec = 16;
-			files = (
-				B3BA7D701649FF4B00289A4D /* EGOImageLoading.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,16 +137,12 @@
 		B34A7AF81648B14400CD245F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		B34A7AFA1648B14900CD245F /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		B34A7AFC1648B14D00CD245F /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
-		B368F8BA164A0033009A960E /* EGOCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOCache.h; sourceTree = "<group>"; };
-		B368F8BB164A0033009A960E /* EGOCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOCache.m; sourceTree = "<group>"; };
-		B368F8BC164A0033009A960E /* EGOImageButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOImageButton.h; sourceTree = "<group>"; };
-		B368F8BD164A0034009A960E /* EGOImageButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOImageButton.m; sourceTree = "<group>"; };
-		B368F8BE164A0034009A960E /* EGOImageLoadConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOImageLoadConnection.h; sourceTree = "<group>"; };
-		B368F8BF164A0034009A960E /* EGOImageLoadConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOImageLoadConnection.m; sourceTree = "<group>"; };
-		B368F8C0164A0034009A960E /* EGOImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOImageLoader.h; sourceTree = "<group>"; };
-		B368F8C1164A0034009A960E /* EGOImageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOImageLoader.m; sourceTree = "<group>"; };
-		B368F8C2164A0034009A960E /* EGOImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOImageView.h; sourceTree = "<group>"; };
-		B368F8C3164A0034009A960E /* EGOImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOImageView.m; sourceTree = "<group>"; };
+		B35DED10164A8D0A0042C730 /* BugSenseCrashController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BugSenseCrashController.h; sourceTree = "<group>"; };
+		B35DED12164A8D560042C730 /* BugSense-iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "BugSense-iOS.framework"; sourceTree = "<group>"; };
+		B38C881A164C72590075A5F5 /* ShowTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowTableViewCell.h; sourceTree = "<group>"; };
+		B38C881B164C72590075A5F5 /* ShowTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowTableViewCell.m; sourceTree = "<group>"; };
+		B38C881D164C740E0075A5F5 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = placeholder.png; path = ../../EGOImageLoading/Demo/placeholder.png; sourceTree = "<group>"; };
+		B38C88AB164C86620075A5F5 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		B3958F4F1648BEB900412C9E /* ListenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListenViewController.xib; sourceTree = "<group>"; };
 		B3958F511648BFDA00412C9E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		B3958FA51648EFE500412C9E /* libAudioStreamer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAudioStreamer.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -198,17 +178,12 @@
 		B3958FF31649050D00412C9E /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = images/logo.png; sourceTree = "<group>"; };
 		B3958FFD1649088D00412C9E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B3958FFF164908A000412C9E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		B3959001164908D100412C9E /* BugSense-iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "BugSense-iOS.framework"; path = "../../Dropbox/Coursework/csc371/final_project/iphone/radiodepaul/BugSense-iOS.framework"; sourceTree = "<group>"; };
 		B39590051649090100412C9E /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		B39590061649091600412C9E /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
 		B3959010164909C100412C9E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		B3959012164909C500412C9E /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		B3959014164909D400412C9E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		B3959016164909D700412C9E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		B3BA7D6A1649FF4B00289A4D /* libEGOImageLoading.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libEGOImageLoading.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		B3BA7D6E1649FF4B00289A4D /* EGOImageLoading-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EGOImageLoading-Prefix.pch"; sourceTree = "<group>"; };
-		B3BA7D6F1649FF4B00289A4D /* EGOImageLoading.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EGOImageLoading.h; sourceTree = "<group>"; };
-		B3BA7D711649FF4B00289A4D /* EGOImageLoading.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EGOImageLoading.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +191,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B38C88AC164C86620075A5F5 /* ImageIO.framework in Frameworks */,
+				B35DED13164A8D560042C730 /* BugSense-iOS.framework in Frameworks */,
 				B317CCFB16488DF400E1FBE9 /* Foundation.framework in Frameworks */,
 				B317CCF916488DF400E1FBE9 /* UIKit.framework in Frameworks */,
 				B3958F521648BFDA00412C9E /* AVFoundation.framework in Frameworks */,
@@ -225,9 +202,7 @@
 				B34A7AF71648B13E00CD245F /* QuartzCore.framework in Frameworks */,
 				B317CCFD16488DF400E1FBE9 /* CoreGraphics.framework in Frameworks */,
 				B3958FFE1649088D00412C9E /* SystemConfiguration.framework in Frameworks */,
-				B3959002164908D100412C9E /* BugSense-iOS.framework in Frameworks */,
 				B3958FD61648F13800412C9E /* libAudioStreamer.a in Frameworks */,
-				B368F8CA164A0097009A960E /* libEGOImageLoading.a in Frameworks */,
 				B3959000164908A000412C9E /* libz.dylib in Frameworks */,
 				B39590071649091600412C9E /* libTestFlight.a in Frameworks */,
 			);
@@ -241,27 +216,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B3BA7D671649FF4B00289A4D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B3BA7D6B1649FF4B00289A4D /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		B317CCE916488DF400E1FBE9 = {
 			isa = PBXGroup;
 			children = (
+				B38C88AB164C86620075A5F5 /* ImageIO.framework */,
+				B35DED12164A8D560042C730 /* BugSense-iOS.framework */,
 				B3959016164909D700412C9E /* Default@2x.png */,
 				B3959014164909D400412C9E /* Default.png */,
 				B3959012164909C500412C9E /* Icon@2x.png */,
 				B3959010164909C100412C9E /* Icon.png */,
 				B317CCFE16488DF400E1FBE9 /* Radio DePaul */,
 				B3958FA71648EFE500412C9E /* AudioStreamer */,
-				B3BA7D6C1649FF4B00289A4D /* EGOImageLoading */,
 				B317CCF716488DF400E1FBE9 /* Frameworks */,
 				B317CCF516488DF400E1FBE9 /* Products */,
 			);
@@ -272,7 +240,6 @@
 			children = (
 				B317CCF416488DF400E1FBE9 /* Radio DePaul.app */,
 				B3958FA51648EFE500412C9E /* libAudioStreamer.a */,
-				B3BA7D6A1649FF4B00289A4D /* libEGOImageLoading.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -282,7 +249,6 @@
 			children = (
 				B3958FFF164908A000412C9E /* libz.dylib */,
 				B3958FFD1649088D00412C9E /* SystemConfiguration.framework */,
-				B3959001164908D100412C9E /* BugSense-iOS.framework */,
 				B3958F511648BFDA00412C9E /* AVFoundation.framework */,
 				B34A7AFC1648B14D00CD245F /* MediaPlayer.framework */,
 				B34A7AFA1648B14900CD245F /* AudioToolbox.framework */,
@@ -310,6 +276,7 @@
 		B317CCFF16488DF400E1FBE9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B35DED10164A8D0A0042C730 /* BugSenseCrashController.h */,
 				B39590051649090100412C9E /* TestFlight.h */,
 				B317CD0016488DF400E1FBE9 /* Radio DePaul-Info.plist */,
 				B317CD0116488DF400E1FBE9 /* InfoPlist.strings */,
@@ -323,6 +290,7 @@
 		B317CD731648A44F00E1FBE9 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B38C881D164C740E0075A5F5 /* placeholder.png */,
 				B33F495F164A7629000474EB /* pattern.jpg */,
 				B33F4960164A7629000474EB /* pattern@2x.png */,
 				B33F4953164A2BC8000474EB /* BG-pattern.png */,
@@ -366,6 +334,22 @@
 		B33F4952164A2834000474EB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B317CD151648912800E1FBE9 /* DisclosureButtonController.h */,
+				B317CD161648912800E1FBE9 /* DisclosureButtonController.m */,
+				B317CD181648914B00E1FBE9 /* DisclosureDetailController.h */,
+				B317CD191648914C00E1FBE9 /* DisclosureDetailController.m */,
+				B317CD0F16488E9700E1FBE9 /* FirstLevelController.h */,
+				B317CD1016488E9700E1FBE9 /* FirstLevelController.m */,
+				B317CD1216488FAA00E1FBE9 /* SecondLevelController.h */,
+				B317CD1316488FAA00E1FBE9 /* SecondLevelController.m */,
+				B317CD2B16489A8100E1FBE9 /* NavigationController.h */,
+				B317CD2C16489A8100E1FBE9 /* NavigationController.m */,
+				B317CD7A1648A54800E1FBE9 /* NewsViewController.h */,
+				B317CD7B1648A54800E1FBE9 /* NewsViewController.m */,
+				B317CD831648A69700E1FBE9 /* ListenViewController.h */,
+				B317CD841648A69700E1FBE9 /* ListenViewController.m */,
+				B317CD751648A4BF00E1FBE9 /* InfoViewController.h */,
+				B317CD761648A4BF00E1FBE9 /* InfoViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -422,56 +406,14 @@
 			path = "Shared Resources";
 			sourceTree = "<group>";
 		};
-		B3BA7D6C1649FF4B00289A4D /* EGOImageLoading */ = {
-			isa = PBXGroup;
-			children = (
-				B368F8BA164A0033009A960E /* EGOCache.h */,
-				B368F8BB164A0033009A960E /* EGOCache.m */,
-				B368F8BC164A0033009A960E /* EGOImageButton.h */,
-				B368F8BD164A0034009A960E /* EGOImageButton.m */,
-				B368F8BE164A0034009A960E /* EGOImageLoadConnection.h */,
-				B368F8BF164A0034009A960E /* EGOImageLoadConnection.m */,
-				B368F8C0164A0034009A960E /* EGOImageLoader.h */,
-				B368F8C1164A0034009A960E /* EGOImageLoader.m */,
-				B368F8C2164A0034009A960E /* EGOImageView.h */,
-				B368F8C3164A0034009A960E /* EGOImageView.m */,
-				B3BA7D6F1649FF4B00289A4D /* EGOImageLoading.h */,
-				B3BA7D711649FF4B00289A4D /* EGOImageLoading.m */,
-				B3BA7D6D1649FF4B00289A4D /* Supporting Files */,
-			);
-			path = EGOImageLoading;
-			sourceTree = "<group>";
-		};
-		B3BA7D6D1649FF4B00289A4D /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				B3BA7D6E1649FF4B00289A4D /* EGOImageLoading-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		B3D32ADA1649F99000A76629 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				B33F4952164A2834000474EB /* Controllers */,
 				B317CD0716488DF400E1FBE9 /* AppDelegate.h */,
 				B317CD0816488DF400E1FBE9 /* AppDelegate.m */,
-				B317CD151648912800E1FBE9 /* DisclosureButtonController.h */,
-				B317CD161648912800E1FBE9 /* DisclosureButtonController.m */,
-				B317CD181648914B00E1FBE9 /* DisclosureDetailController.h */,
-				B317CD191648914C00E1FBE9 /* DisclosureDetailController.m */,
-				B317CD0F16488E9700E1FBE9 /* FirstLevelController.h */,
-				B317CD1016488E9700E1FBE9 /* FirstLevelController.m */,
-				B317CD1216488FAA00E1FBE9 /* SecondLevelController.h */,
-				B317CD1316488FAA00E1FBE9 /* SecondLevelController.m */,
-				B317CD2B16489A8100E1FBE9 /* NavigationController.h */,
-				B317CD2C16489A8100E1FBE9 /* NavigationController.m */,
-				B317CD7A1648A54800E1FBE9 /* NewsViewController.h */,
-				B317CD7B1648A54800E1FBE9 /* NewsViewController.m */,
-				B317CD831648A69700E1FBE9 /* ListenViewController.h */,
-				B317CD841648A69700E1FBE9 /* ListenViewController.m */,
-				B317CD751648A4BF00E1FBE9 /* InfoViewController.h */,
-				B317CD761648A4BF00E1FBE9 /* InfoViewController.m */,
+				B33F4952164A2834000474EB /* Controllers */,
+				B38C881A164C72590075A5F5 /* ShowTableViewCell.h */,
+				B38C881B164C72590075A5F5 /* ShowTableViewCell.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -513,23 +455,6 @@
 			productReference = B3958FA51648EFE500412C9E /* libAudioStreamer.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		B3BA7D691649FF4B00289A4D /* EGOImageLoading */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B3BA7D731649FF4B00289A4D /* Build configuration list for PBXNativeTarget "EGOImageLoading" */;
-			buildPhases = (
-				B3BA7D661649FF4B00289A4D /* Sources */,
-				B3BA7D671649FF4B00289A4D /* Frameworks */,
-				B3BA7D681649FF4B00289A4D /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = EGOImageLoading;
-			productName = EGOImageLoading;
-			productReference = B3BA7D6A1649FF4B00289A4D /* libEGOImageLoading.a */;
-			productType = "com.apple.product-type.library.static";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -553,7 +478,6 @@
 			targets = (
 				B317CCF316488DF400E1FBE9 /* Radio DePaul */,
 				B3958FA41648EFE500412C9E /* AudioStreamer */,
-				B3BA7D691649FF4B00289A4D /* EGOImageLoading */,
 			);
 		};
 /* End PBXProject section */
@@ -597,6 +521,7 @@
 				B33F495A164A2BC9000474EB /* navBar@2x.png in Resources */,
 				B33F4961164A7629000474EB /* pattern.jpg in Resources */,
 				B33F4962164A7629000474EB /* pattern@2x.png in Resources */,
+				B38C881E164C740E0075A5F5 /* placeholder.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -617,6 +542,7 @@
 				B317CD781648A4BF00E1FBE9 /* InfoViewController.m in Sources */,
 				B317CD7D1648A54900E1FBE9 /* NewsViewController.m in Sources */,
 				B317CD861648A69700E1FBE9 /* ListenViewController.m in Sources */,
+				B38C881C164C72590075A5F5 /* ShowTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -629,19 +555,6 @@
 				B3958FD21648F0BE00412C9E /* iPhoneStreamingPlayerViewController.m in Sources */,
 				B3958FD31648F0BE00412C9E /* LevelMeterView.m in Sources */,
 				B3958FD51648F0BE00412C9E /* UIDevice+Hardware.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B3BA7D661649FF4B00289A4D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B3BA7D721649FF4B00289A4D /* EGOImageLoading.m in Sources */,
-				B368F8C4164A0034009A960E /* EGOCache.m in Sources */,
-				B368F8C5164A0034009A960E /* EGOImageButton.m in Sources */,
-				B368F8C6164A0034009A960E /* EGOImageLoadConnection.m in Sources */,
-				B368F8C7164A0034009A960E /* EGOImageLoader.m in Sources */,
-				B368F8C8164A0034009A960E /* EGOImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -722,6 +635,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../Dropbox/Coursework/csc371/final_project/iphone/radiodepaul\"",
+					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Nav/Radio DePaul-Prefix.pch";
@@ -731,6 +645,7 @@
 					"\"$(SRCROOT)/../../Dropbox/Coursework/csc371/final_project/iphone/radiodepaul/radiodepaul\"",
 					"\"$(SRCROOT)/Nav\"",
 				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "Radio DePaul";
 				PROVISIONING_PROFILE = "90F9D4E3-FFCA-4BF7-830F-A6CB240D801E";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "90F9D4E3-FFCA-4BF7-830F-A6CB240D801E";
@@ -746,6 +661,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../Dropbox/Coursework/csc371/final_project/iphone/radiodepaul\"",
+					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Nav/Radio DePaul-Prefix.pch";
@@ -755,6 +671,7 @@
 					"\"$(SRCROOT)/../../Dropbox/Coursework/csc371/final_project/iphone/radiodepaul/radiodepaul\"",
 					"\"$(SRCROOT)/Nav\"",
 				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "Radio DePaul";
 				PROVISIONING_PROFILE = "017CF8EF-B6DA-409E-AC0A-209E753DB462";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "017CF8EF-B6DA-409E-AC0A-209E753DB462";
@@ -796,32 +713,6 @@
 			};
 			name = Release;
 		};
-		B3BA7D741649FF4B00289A4D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_ARC = NO;
-				DSTROOT = /tmp/EGOImageLoading.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "EGOImageLoading/EGOImageLoading-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		B3BA7D751649FF4B00289A4D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_ARC = NO;
-				DSTROOT = /tmp/EGOImageLoading.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "EGOImageLoading/EGOImageLoading-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -848,15 +739,6 @@
 			buildConfigurations = (
 				B3958FAF1648EFE500412C9E /* Debug */,
 				B3958FB01648EFE500412C9E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B3BA7D731649FF4B00289A4D /* Build configuration list for PBXNativeTarget "EGOImageLoading" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B3BA7D741649FF4B00289A4D /* Debug */,
-				B3BA7D751649FF4B00289A4D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

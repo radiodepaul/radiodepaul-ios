@@ -42,7 +42,7 @@
     } else {
         for(NSDictionary *item in jsonArray) {
             NSDictionary *show = [item objectForKey:@"show"];
-            NSDictionary *genres = [show objectForKey:@"genre"];
+            //NSDictionary *genres = [show objectForKey:@"genre"];
             NSArray *hosts = [show objectForKey:@"hosts"];
             NSArray *days = [item objectForKey:@"days"];
             
@@ -360,10 +360,9 @@
         [TestFlight passCheckpoint:@"Played the stream"];
         if ([MPNowPlayingInfoCenter class])  {
             /* we're on iOS 5, so set up the now playing center */
-            UIImage *albumArtImage = [UIImage imageNamed:@"logo"];
-            MPMediaItemArtwork *albumArt = [[MPMediaItemArtwork alloc] initWithImage:albumArtImage];
+            MPMediaItemArtwork *albumArt = [[MPMediaItemArtwork alloc] initWithImage:showImage.image];
             
-            NSDictionary *currentlyPlayingTrackInfo = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:@"Radio DePaul", albumArt, nil] forKeys:[NSArray arrayWithObjects:MPMediaItemPropertyTitle, MPMediaItemPropertyArtwork, nil]];
+            NSDictionary *currentlyPlayingTrackInfo = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:showTitle.text, albumArt, nil] forKeys:[NSArray arrayWithObjects:MPMediaItemPropertyTitle, MPMediaItemPropertyArtwork, nil]];
             [MPNowPlayingInfoCenter defaultCenter].nowPlayingInfo = currentlyPlayingTrackInfo;
         }
 	}

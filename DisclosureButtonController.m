@@ -1,6 +1,7 @@
 #import "DisclosureButtonController.h"
 #import "AppDelegate.h"
 #import "DisclosureDetailController.h"
+#import "ShowTableViewCell.h"
 
 @interface DisclosureButtonController ()
 @property (strong, nonatomic) DisclosureDetailController *childController;
@@ -51,12 +52,12 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString * DisclosureButtonCellIdentifier = @"DisclosureButtonCellIdentifier";
+    static NSString * DisclosureButtonCellIdentifier = @"ShowCellIdentifier";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:
+    ShowTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:
                              DisclosureButtonCellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc]
+        cell = [[ShowTableViewCell alloc]
                 initWithStyle:UITableViewCellStyleDefault
                 reuseIdentifier: DisclosureButtonCellIdentifier];
     }
