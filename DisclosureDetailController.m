@@ -55,6 +55,7 @@
     self.showStartTime.text = [self.slot objectForKey:@"start_time"];
     self.showEndTime.text = [self.slot objectForKey:@"end_time"];
     self.showSchedule.text = [show objectForKey:@"schedule_at"];
+    [self refreshTextLayout:showDescription];
     if (hasRetinaDisplay)
     {
         NSLog(@"medium image loaded");
@@ -68,6 +69,7 @@
                   placeholderImage:[UIImage imageNamed:@"placeholder_small"]];
     }
     
+    showGenres.text = [show objectForKey:@"genres"];
     [showImage.layer setBorderWidth:5.0f];
     [showImage.layer setBorderColor:[[UIColor whiteColor] CGColor]];
     [showImage.layer setShadowRadius:5.0f];
@@ -130,5 +132,21 @@ BOOL hasRetinaDisplay(void)
     browser.wantsFullScreenLayout = YES; // Decide if you want the photo browser full screen, i.e. whether the status bar is affected (defaults to YES)
     browser.displayActionButton = YES; // Show action button to save, copy or email photos (defaults to NO)
     [self.navigationController pushViewController:browser animated:YES];
+}
+
+- (void)refreshTextLayout:(UILabel *) labelIn
+{
+    CGRect myLabelFrame = [labelIn frame];
+    CGSize myLabelSize = [labelIn.text sizeWithFont:labelIn.font constrainedToSize:CGSizeMake(myLabelFrame.size.width, 9999)
+                                    lineBreakMode:UILineBreakModeWordWrap];
+    //CGFloat delta = myLabelSize.height - myLabelFrame.size.height;
+    
+    myLabelFrame.size.height = myLabelSize.height;
+    [labelIn setFrame:myLabelFrame];
+    
+    //CGRect myTextViewFrame = [self.myTextView frame];
+    //myTextViewFrame.origin.y += delta;
+    //myTextViewFrame.size.height -= delta;
+    //[self.myTextView setFrame:myTextViewFrame];
 }
 @end

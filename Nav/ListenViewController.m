@@ -17,6 +17,7 @@
 @end
 
 @implementation ListenViewController
+@synthesize scrollView;
 
 @synthesize currentArtist, currentTitle;
 
@@ -32,6 +33,7 @@
 - (void) setupUI
 {
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"pattern"]]];
+   
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -66,6 +68,9 @@
     } else {
         // Inform the user that the connection failed.
     }
+    scrollView.contentSize = CGSizeMake(self.view.bounds.size.width, 800.0);
+    
+    
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
@@ -140,13 +145,7 @@
         [showImage.layer setShouldRasterize:YES];
         [showImage.layer setMasksToBounds:NO];
         
-        NSString *genresString = @"";
-        //for(NSString *genre in genres)
-        //{
-        //    NSLog(@"%@", genre);
-        //    genresString = [genresString stringByAppendingString:[NSString stringWithFormat:@"%@ ", genre]];
-        //}
-        showGenres.text = genresString;
+        showGenres.text = [show objectForKey:@"genres"];
         
         for(NSString *day in days)
         {
@@ -160,6 +159,7 @@
         
         showStartTime.text = [onAirSlot objectForKey:@"start_time"];
         showEndTime.text = [onAirSlot objectForKey:@"end_time"];
+        [self refreshTextLayout:showDescription];
 }
 
 //
@@ -326,6 +326,7 @@
 
 - (void)viewDidUnload
 {
+    [self setScrollView:nil];
     showEndTime = nil;
     showStartTime = nil;
     showImage = nil;
@@ -619,6 +620,7 @@
 //
 - (void)dealloc
 {
+    [scrollView release];
 	[self destroyStreamer];
 	[self createTimers:NO];
 }
@@ -646,6 +648,22 @@
 		default:
 			break;
 	}
+}
+
+- (void)refreshTextLayout:(UILabel *) label
+{
+    CGRect myLabelFrame = [label frame];
+    CGSize myLabelSize = [label.text sizeWithFont:label.font constrainedToSize:CGSizeMake(myLabelFrame.size.width, 9999)
+                                                   lineBreakMode:UILineBreakModeWordWrap];
+    //CGFloat delta = myLabelSize.height - myLabelFrame.size.height;
+    
+    myLabelFrame.size.height = myLabelSize.height;
+    [label setFrame:myLabelFrame];
+    
+    //CGRect myTextViewFrame = [self.myTextView frame];
+    //myTextViewFrame.origin.y += delta;
+    //myTextViewFrame.size.height -= delta;
+    //[self.myTextView setFrame:myTextViewFrame];
 }
 
 @end

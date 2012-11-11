@@ -47,6 +47,7 @@
 @property (retain) NSString* currentArtist;
 @property (retain) NSString* currentTitle;
 
+@property (retain, nonatomic) IBOutlet UIScrollView *scrollView;
 - (IBAction)buttonPressed:(id)sender;
 - (void)spinButton;
 - (void)forceUIUpdate;
