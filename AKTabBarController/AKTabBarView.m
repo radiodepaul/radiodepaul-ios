@@ -1,0 +1,66 @@
+// AKTabBarView.m
+//
+// Copyright (c) 2012 Ali Karagoz (http://alikaragoz.net)
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+
+#import "AKTabBarView.h"
+
+@implementation AKTabBarView
+
+#pragma mark - Setters
+
+- (void)setTabBar:(AKTabBar *)tabBar
+{
+    if (_tabBar != tabBar) {
+        [_tabBar removeFromSuperview];
+        _tabBar = tabBar;
+        [self addSubview:tabBar];
+    }
+}
+
+
+- (void)setContentView:(UIView *)contentView
+{
+    [_contentView removeFromSuperview];
+    _contentView = contentView;
+    _contentView.frame = CGRectZero;
+    [self addSubview:_contentView];
+    [self sendSubviewToBack:_contentView];
+}
+
+#pragma mark - Layout & Drawing
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    CGRect contentViewRect = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height - ((!_isTabBarHidding) ? _tabBar.bounds.size.height : 0));
+    _contentView.frame = contentViewRect;
+    [_contentView setNeedsLayout];
+}
+
+- (void)drawRect:(CGRect)rect
+{
+	CGContextRef ctx = UIGraphicsGetCurrentContext();
+    CGContextSetRGBFillColor(ctx, 230, 230, 230, 1.0);
+	CGContextFillRect(ctx, self.bounds);
+}
+
+
+@end

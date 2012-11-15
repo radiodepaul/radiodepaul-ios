@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>BeamMusicPlayerController.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>9</integer>
+		</dict>
 		<key>EGOImageLoading.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -33,6 +38,16 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>B317CCF316488DF400E1FBE9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B37657731650F7FC00F6BCA5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B37658791651014800F6BCA5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -63,6 +78,11 @@
 			<true/>
 		</dict>
 		<key>B3BA7D691649FF4B00289A4D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B3D3058616546B1F00710843</key>
 		<dict>
 			<key>primary</key>
 			<true/>
