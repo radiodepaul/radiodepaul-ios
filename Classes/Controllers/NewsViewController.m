@@ -63,12 +63,20 @@
 
 }
 
+- (void) viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    if (self.newsPosts == nil)
+        [self loadNewsPosts];
+    
+}
+
 - (void) viewDidLoad
 {
     [super viewDidLoad];
     self.navigationItem.title = @"News";
     
-    [self loadNewsPosts];
+    
     [self.tableView addPullToRefreshWithActionHandler:^{
         [self loadNewsPosts];
     }];

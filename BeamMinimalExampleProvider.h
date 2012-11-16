@@ -14,4 +14,6 @@
  */
 @interface BeamMinimalExampleProvider : NSObject<BeamMusicPlayerDataSource, BeamMusicPlayerDelegate>
 
++ (id)sharedInstance;
+
 @end

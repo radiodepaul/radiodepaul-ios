@@ -16,17 +16,18 @@
 #import "FirstLevelController.h"
 #import "AudioStreamer.h"
 #import <SDWebImage/UIImageView+WebCache.h>
-#import "StreamViewController.h"
 #import "ListenNavigationViewController.h"
 #import "ListenViewController.h"
 #import "FirstLevelController.h"
 #import "NewsViewController.h"
 #import "InfoViewController.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @implementation AppDelegate
 @synthesize rootController;
 @synthesize uiIsVisible;
 @synthesize beamViewController = _beamViewController;
+@synthesize onAirSlot;
 
 #pragma mark -
 #pragma mark Application lifecycle
@@ -38,42 +39,54 @@
     
 }
 
++ (BeamMusicPlayerViewController *) sharedBeamViewController
+{
+        static dispatch_once_t pred = 0;
+        __strong static id _sharedObject = nil;
+        dispatch_once(&pred, ^{
+            _sharedObject = [BeamMusicPlayerViewController sharedInstance]; // or some other init method
+        });
+        return _sharedObject;
+}
+
+
++ (NSObject<BeamMusicPlayerDataSource, BeamMusicPlayerDelegate> *) sharedBeamProvider
+{
+    static dispatch_once_t pred = 0;
+    __strong static id _sharedObject = nil;
+    dispatch_once(&pred, ^{
+        _sharedObject = [BeamMinimalExampleProvider sharedInstance]; // or some other init method
+    });
+    return _sharedObject;
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [[BITHockeyManager sharedHockeyManager] configureWithBetaIdentifier:@"a67815b310dd375403ce258a3b66da45"
                                                          liveIdentifier:@"1051a7cc9c114e635a665febab9b8533"
                                                                delegate:self];
-    [[BITHockeyManager sharedHockeyManager] startManager];
+    //[[BITHockeyManager sharedHockeyManager] startManager];
  
     [RKClient clientWithBaseURLString:@"http://radiodepaul.herokuapp.com"];
     [RKObjectManager objectManagerWithBaseURLString:@"http://radiodepaul.herokuapp.com"];
     
     self.uiIsVisible = YES;
     [self setupUI];
-    
+
     self.window = [[DSFingerTipWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
-     self.exampleProvider = [[BeamMinimalExampleProvider alloc] init];
-    
-    self.beamViewController = [BeamMusicPlayerViewController new];
-    self.beamViewController.delegate = self.exampleProvider;
-    self.beamViewController.dataSource = self.exampleProvider;
-    self.beamViewController.hidesBottomBarWhenPushed = YES;
-    self.beamViewController.backBlock = ^{
-        [[[UIAlertView alloc] initWithTitle:@"Action" message:@"The Player's back button was pressed." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil] show];
-    };
-    self.beamViewController.actionBlock = ^{
-        [[[UIAlertView alloc] initWithTitle:@"Action" message:@"The Player's action button was pressed." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil] show];
-    };
-    
-    [self.audioStreamer initWithURL:[NSURL URLWithString:@"http://rock.radio.depaul.edu:8000"]];
-    
-    //self.window.rootViewController = self.beamViewController;
-    
     self.rootController = [[UITabBarController alloc] init];
     
-    ListenNavigationViewController *listenNavigationViewController = [[ListenNavigationViewController alloc] initWithRootViewController:[[ListenViewController alloc] initWithStyle:UITableViewStyleGrouped]];
+    ListenViewController *listenViewController = [[ListenViewController alloc] initWithStyle:UITableViewStyleGrouped];
+    ListenNavigationViewController *listenNavigationViewController = [[ListenNavigationViewController alloc] initWithRootViewController:listenViewController];
+    
+    [AppDelegate sharedBeamViewController].dataSource = [AppDelegate sharedBeamProvider];
+    [AppDelegate sharedBeamViewController].delegate = [AppDelegate sharedBeamProvider];
+    [[AppDelegate sharedBeamViewController] reloadData];
+    [AppDelegate sharedBeamViewController].shouldHideNextTrackButtonAtBoundary = YES;
+    [AppDelegate sharedBeamViewController].shouldHidePreviousTrackButtonAtBoundary = YES;
+    [AppDelegate sharedBeamViewController].hidesBottomBarWhenPushed = YES;
     
     UINavigationController *scheduleController = [[UINavigationController alloc] initWithRootViewController:[[FirstLevelController alloc] initWithStyle:UITableViewStylePlain]];
     
@@ -99,14 +112,6 @@
     //item.title = @"Info";
     //[item setImage:[UIImage imageNamed:@"info.png"]];
     
-    
-    //[[NSBundle mainBundle] loadNibNamed:@"TabBarController" owner:self options:nil];
-    
-    [self.window addSubview:self.rootController.view];
-    
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
-    
     [[NSNotificationCenter defaultCenter]
 	 addObserver:self
 	 selector:@selector(presentAlertWithTitle:)
@@ -114,9 +119,30 @@
 	 object:nil];
 	[[NSThread currentThread] setName:@"Main Thread"];
     
-    //[[UINavigationBar appearance] setBackgroundImage: [UIImage imageNamed:@"MyImageName"] forBarMetrics:UIBarMetricsDefault];
-    //[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent animated:YES];
+    [self.window addSubview:self.rootController.view];
+    
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (void)remoteControlReceivedWithEvent:(UIEvent *)event {
+	switch (event.subtype) {
+		case UIEventSubtypeRemoteControlTogglePlayPause:
+			[[AppDelegate sharedBeamViewController].streamer start];
+			break;
+		case UIEventSubtypeRemoteControlPlay:
+			[[AppDelegate sharedBeamViewController].streamer start];
+			break;
+		case UIEventSubtypeRemoteControlPause:
+			[[AppDelegate sharedBeamViewController].streamer pause];
+			break;
+		case UIEventSubtypeRemoteControlStop:
+			[[AppDelegate sharedBeamViewController].streamer stop];
+			break;
+		default:
+			break;
+	}
 }
 
 #pragma mark - BITUpdateManagerDelegate
@@ -167,6 +193,4 @@
 	 name:ASPresentAlertWithTitleNotification
 	 object:nil];
 }
-
-
 @end

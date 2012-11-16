@@ -8,36 +8,49 @@
 //
 
 #import "BeamMinimalExampleProvider.h"
+#import "AppDelegate.h"
 
 @implementation BeamMinimalExampleProvider
 
++ (id)sharedInstance
+{
+    static dispatch_once_t pred = 0;
+    __strong static id _sharedObject = nil;
+    dispatch_once(&pred, ^{
+        _sharedObject = [[self alloc] init]; // or some other init method
+    });
+    return _sharedObject;
+}
+
 -(NSString*)musicPlayer:(BeamMusicPlayerViewController *)player albumForTrack:(NSUInteger)trackNumber {
-    return @"Example Album that is very long and therefore needs scrolling";
+    return @"Chicago's College Connection";
 }
 
 -(NSString*)musicPlayer:(BeamMusicPlayerViewController *)player artistForTrack:(NSUInteger)trackNumber {
-    return @"Cim Tooks and the Pineapples";
+    NSLog(@"Returning artist");
+    return @"Radio DePaul";
 }
 
 -(NSString*)musicPlayer:(BeamMusicPlayerViewController *)player titleForTrack:(NSUInteger)trackNumber {
-    return @"If the Foo sings bar, it makes me wanna baz.";
+        NSLog(@"Returning title");
+    return @"Show Title";
 }
 
 -(CGFloat)musicPlayer:(BeamMusicPlayerViewController *)player lengthForTrack:(NSUInteger)trackNumber {
-    return 125;
+    return 0.0f;
 }
 
 -(NSInteger)numberOfTracksInPlayer:(BeamMusicPlayerViewController *)player {
-    return 3;
+    return 1;
 }
 
 -(void)musicPlayer:(BeamMusicPlayerViewController *)player artworkForTrack:(NSUInteger)trackNumber receivingBlock:(BeamMusicPlayerReceivingBlock)receivingBlock {
-    NSString* url = @"http://a3.mzstatic.com/us/r1000/045/Features/7f/50/ee/dj.zygromnm.600x600-75.jpg";
+    //NSString* url = @"http://a3.mzstatic.com/us/r1000/045/Features/7f/50/ee/dj.zygromnm.600x600-75.jpg";
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-        NSData* urlData = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
+        //NSData* urlData = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
         
-        UIImage* image = [UIImage imageWithData:urlData];
+        UIImage* image = [UIImage imageNamed:@"placeholder_medium"];
         receivingBlock(image,nil);
     });
 }

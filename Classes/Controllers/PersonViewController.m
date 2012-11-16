@@ -79,9 +79,6 @@ typedef enum {
     
     self.tableView.tableHeaderView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin;
     [imageView release];
-    
-    
-	// Do any additional setup after loading the view.
 }
 
 -(BOOL) hasRetinaDisplay

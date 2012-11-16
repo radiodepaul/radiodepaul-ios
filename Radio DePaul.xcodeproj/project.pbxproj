@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B306F2BB16534A8300C2F399 /* StreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B306F2B916534A8300C2F399 /* StreamViewController.m */; };
-		B306F2BC16534A8300C2F399 /* StreamViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B306F2BA16534A8300C2F399 /* StreamViewController.xib */; };
-		B306F2BF165351C500C2F399 /* OnAirNowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B306F2BE165351C500C2F399 /* OnAirNowViewController.m */; };
 		B30701AF165399830043E432 /* NewsPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B30701AE165399830043E432 /* NewsPostViewController.m */; };
 		B30701B21653BC640043E432 /* PersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B30701B11653BC630043E432 /* PersonViewController.m */; };
 		B317CCF916488DF400E1FBE9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B317CCF816488DF400E1FBE9 /* UIKit.framework */; };
@@ -52,7 +49,6 @@
 		B366FA8D1653311F00181A33 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B376575F1650F78E00F6BCA5 /* NavigationController.m */; };
 		B366FA8E1653311F00181A33 /* ListenNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B366FA7D16532B8600181A33 /* ListenNavigationViewController.m */; };
 		B366FA8F1653311F00181A33 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B37657611650F78E00F6BCA5 /* NewsViewController.m */; };
-		B366FA901653311F00181A33 /* SecondLevelController.m in Sources */ = {isa = PBXBuildFile; fileRef = B37657631650F78E00F6BCA5 /* SecondLevelController.m */; };
 		B366FA921653311F00181A33 /* ScheduleSlot.m in Sources */ = {isa = PBXBuildFile; fileRef = B366FA70165241A000181A33 /* ScheduleSlot.m */; };
 		B366FA931653311F00181A33 /* Show.m in Sources */ = {isa = PBXBuildFile; fileRef = B366FA73165244DB00181A33 /* Show.m */; };
 		B366FA941653311F00181A33 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B39005F31650F4D5000905DB /* main.m */; };
@@ -103,8 +99,14 @@
 		B3D305541654642300710843 /* UINavigationController+AKTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D3054C1654642300710843 /* UINavigationController+AKTabBarController.m */; };
 		B3D305551654642300710843 /* UIViewController+AKTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D3054E1654642300710843 /* UIViewController+AKTabBarController.m */; };
 		B3D305C6165471CA00710843 /* BeamMinimalExampleProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D305C5165471CA00710843 /* BeamMinimalExampleProvider.m */; };
-		B3D305C81654742800710843 /* BeamMusicPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3D305C71654742800710843 /* BeamMusicPlayerViewController.xib */; };
-		B3D305CB165478F000710843 /* StreamManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D305CA165478EF00710843 /* StreamManager.m */; };
+		B3D305F71655942100710843 /* BeamMusicPlayerController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B3D305ED1655942100710843 /* BeamMusicPlayerController.bundle */; };
+		B3D305F81655942100710843 /* BeamMPMusicPlayerProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D305EF1655942100710843 /* BeamMPMusicPlayerProvider.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B3D305F91655942100710843 /* BeamMusicPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D305F11655942100710843 /* BeamMusicPlayerController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B3D305FA1655942100710843 /* BeamMusicPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D305F51655942100710843 /* BeamMusicPlayerViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B3D305FB1655942100710843 /* BeamMusicPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3D305F61655942100710843 /* BeamMusicPlayerViewController.xib */; };
+		B3D305FE1655944500710843 /* UIImageView+Reflection.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D305FD1655944500710843 /* UIImageView+Reflection.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B3D306011655945000710843 /* NSDateFormatter+Duration.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D306001655945000710843 /* NSDateFormatter+Duration.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B3D306041655945B00710843 /* AutoScrollLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D306031655945B00710843 /* AutoScrollLabel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B3D5D086165458ED003B3F81 /* SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D5D085165458ED003B3F81 /* SVPullToRefresh.m */; };
 		B3D5D08916545CEB003B3F81 /* DSFingerTipWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D5D08816545CEB003B3F81 /* DSFingerTipWindow.m */; };
 /* End PBXBuildFile section */
@@ -157,11 +159,6 @@
 /* Begin PBXFileReference section */
 		1574F0182C874AE0B4B5EF82 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		89D18248B72C446C80A3A4F7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
-		B306F2B816534A8200C2F399 /* StreamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamViewController.h; sourceTree = "<group>"; };
-		B306F2B916534A8300C2F399 /* StreamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamViewController.m; sourceTree = "<group>"; };
-		B306F2BA16534A8300C2F399 /* StreamViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StreamViewController.xib; sourceTree = "<group>"; };
-		B306F2BD165351C400C2F399 /* OnAirNowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnAirNowViewController.h; sourceTree = "<group>"; };
-		B306F2BE165351C500C2F399 /* OnAirNowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnAirNowViewController.m; sourceTree = "<group>"; };
 		B30701AD165399830043E432 /* NewsPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsPostViewController.h; sourceTree = "<group>"; };
 		B30701AE165399830043E432 /* NewsPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsPostViewController.m; sourceTree = "<group>"; };
 		B30701B01653BC620043E432 /* PersonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonViewController.h; sourceTree = "<group>"; };
@@ -221,7 +218,6 @@
 		B37657601650F78E00F6BCA5 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
 		B37657611650F78E00F6BCA5 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		B37657621650F78E00F6BCA5 /* SecondLevelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondLevelController.h; sourceTree = "<group>"; };
-		B37657631650F78E00F6BCA5 /* SecondLevelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondLevelController.m; sourceTree = "<group>"; };
 		B37657A71650F9C700F6BCA5 /* MWCaptionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWCaptionView.h; sourceTree = "<group>"; };
 		B37657A81650F9C700F6BCA5 /* MWCaptionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWCaptionView.m; sourceTree = "<group>"; };
 		B37657A91650F9C700F6BCA5 /* MWPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWPhoto.h; sourceTree = "<group>"; };
@@ -297,9 +293,22 @@
 		B3D3054E1654642300710843 /* UIViewController+AKTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+AKTabBarController.m"; sourceTree = "<group>"; };
 		B3D305C4165471CA00710843 /* BeamMinimalExampleProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeamMinimalExampleProvider.h; sourceTree = "<group>"; };
 		B3D305C5165471CA00710843 /* BeamMinimalExampleProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeamMinimalExampleProvider.m; sourceTree = "<group>"; };
-		B3D305C71654742800710843 /* BeamMusicPlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BeamMusicPlayerViewController.xib; path = ../../MusicPlayerViewController/Source/BeamMusicPlayerViewController.xib; sourceTree = "<group>"; };
-		B3D305C9165478EF00710843 /* StreamManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamManager.h; sourceTree = "<group>"; };
-		B3D305CA165478EF00710843 /* StreamManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamManager.m; sourceTree = "<group>"; };
+		B3D305ED1655942100710843 /* BeamMusicPlayerController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BeamMusicPlayerController.bundle; sourceTree = "<group>"; };
+		B3D305EE1655942100710843 /* BeamMPMusicPlayerProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeamMPMusicPlayerProvider.h; sourceTree = "<group>"; };
+		B3D305EF1655942100710843 /* BeamMPMusicPlayerProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeamMPMusicPlayerProvider.m; sourceTree = "<group>"; };
+		B3D305F01655942100710843 /* BeamMusicPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeamMusicPlayerController.h; sourceTree = "<group>"; };
+		B3D305F11655942100710843 /* BeamMusicPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeamMusicPlayerController.m; sourceTree = "<group>"; };
+		B3D305F21655942100710843 /* BeamMusicPlayerDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeamMusicPlayerDataSource.h; sourceTree = "<group>"; };
+		B3D305F31655942100710843 /* BeamMusicPlayerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeamMusicPlayerDelegate.h; sourceTree = "<group>"; };
+		B3D305F41655942100710843 /* BeamMusicPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeamMusicPlayerViewController.h; sourceTree = "<group>"; };
+		B3D305F51655942100710843 /* BeamMusicPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeamMusicPlayerViewController.m; sourceTree = "<group>"; };
+		B3D305F61655942100710843 /* BeamMusicPlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BeamMusicPlayerViewController.xib; sourceTree = "<group>"; };
+		B3D305FC1655944500710843 /* UIImageView+Reflection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Reflection.h"; sourceTree = "<group>"; };
+		B3D305FD1655944500710843 /* UIImageView+Reflection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Reflection.m"; sourceTree = "<group>"; };
+		B3D305FF1655945000710843 /* NSDateFormatter+Duration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+Duration.h"; sourceTree = "<group>"; };
+		B3D306001655945000710843 /* NSDateFormatter+Duration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+Duration.m"; sourceTree = "<group>"; };
+		B3D306021655945B00710843 /* AutoScrollLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoScrollLabel.h; sourceTree = "<group>"; };
+		B3D306031655945B00710843 /* AutoScrollLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoScrollLabel.m; sourceTree = "<group>"; };
 		B3D5D084165458ED003B3F81 /* SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPullToRefresh.h; sourceTree = "<group>"; };
 		B3D5D085165458ED003B3F81 /* SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVPullToRefresh.m; sourceTree = "<group>"; };
 		B3D5D08716545CEB003B3F81 /* DSFingerTipWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSFingerTipWindow.h; sourceTree = "<group>"; };
@@ -452,14 +461,6 @@
 				B37657601650F78E00F6BCA5 /* NewsViewController.h */,
 				B37657611650F78E00F6BCA5 /* NewsViewController.m */,
 				B37657621650F78E00F6BCA5 /* SecondLevelController.h */,
-				B37657631650F78E00F6BCA5 /* SecondLevelController.m */,
-				B306F2B816534A8200C2F399 /* StreamViewController.h */,
-				B306F2B916534A8300C2F399 /* StreamViewController.m */,
-				B306F2BA16534A8300C2F399 /* StreamViewController.xib */,
-				B306F2BD165351C400C2F399 /* OnAirNowViewController.h */,
-				B306F2BE165351C500C2F399 /* OnAirNowViewController.m */,
-				B3D305C9165478EF00710843 /* StreamManager.h */,
-				B3D305CA165478EF00710843 /* StreamManager.m */,
 			);
 			name = Controllers;
 			path = Classes/Controllers;
@@ -618,6 +619,7 @@
 		B3C56AE61650D8530017F980 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				B3D305EC1655941B00710843 /* Beam */,
 				B3D305C4165471CA00710843 /* BeamMinimalExampleProvider.h */,
 				B3D305C5165471CA00710843 /* BeamMinimalExampleProvider.m */,
 				B3D305411654642300710843 /* AKTabBarController */,
@@ -671,12 +673,34 @@
 			path = AKTabBarController;
 			sourceTree = "<group>";
 		};
+		B3D305EC1655941B00710843 /* Beam */ = {
+			isa = PBXGroup;
+			children = (
+				B3D306021655945B00710843 /* AutoScrollLabel.h */,
+				B3D306031655945B00710843 /* AutoScrollLabel.m */,
+				B3D305FF1655945000710843 /* NSDateFormatter+Duration.h */,
+				B3D306001655945000710843 /* NSDateFormatter+Duration.m */,
+				B3D305FC1655944500710843 /* UIImageView+Reflection.h */,
+				B3D305FD1655944500710843 /* UIImageView+Reflection.m */,
+				B3D305ED1655942100710843 /* BeamMusicPlayerController.bundle */,
+				B3D305EE1655942100710843 /* BeamMPMusicPlayerProvider.h */,
+				B3D305EF1655942100710843 /* BeamMPMusicPlayerProvider.m */,
+				B3D305F01655942100710843 /* BeamMusicPlayerController.h */,
+				B3D305F11655942100710843 /* BeamMusicPlayerController.m */,
+				B3D305F21655942100710843 /* BeamMusicPlayerDataSource.h */,
+				B3D305F31655942100710843 /* BeamMusicPlayerDelegate.h */,
+				B3D305F41655942100710843 /* BeamMusicPlayerViewController.h */,
+				B3D305F51655942100710843 /* BeamMusicPlayerViewController.m */,
+				B3D305F61655942100710843 /* BeamMusicPlayerViewController.xib */,
+			);
+			name = Beam;
+			sourceTree = "<group>";
+		};
 		B3D32ADA1649F99000A76629 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				B39005F91650F654000905DB /* AppDelegate.h */,
 				B39005FA1650F654000905DB /* AppDelegate.m */,
-				B3D305C71654742800710843 /* BeamMusicPlayerViewController.xib */,
 				B37657531650F78E00F6BCA5 /* Controllers */,
 				B37657641650F78E00F6BCA5 /* Models */,
 			);
@@ -840,9 +864,9 @@
 				B34070B2165101CE002721F2 /* stopbutton.png in Resources */,
 				B34070B3165101CE002721F2 /* stopbutton@2x.png in Resources */,
 				B34070C11651075A002721F2 /* HockeySDKResources.bundle in Resources */,
-				B306F2BC16534A8300C2F399 /* StreamViewController.xib in Resources */,
 				B3D305511654642300710843 /* AKTabBarController.bundle in Resources */,
-				B3D305C81654742800710843 /* BeamMusicPlayerViewController.xib in Resources */,
+				B3D305F71655942100710843 /* BeamMusicPlayerController.bundle in Resources */,
+				B3D305FB1655942100710843 /* BeamMusicPlayerViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -900,7 +924,6 @@
 				B366FA8D1653311F00181A33 /* NavigationController.m in Sources */,
 				B366FA8E1653311F00181A33 /* ListenNavigationViewController.m in Sources */,
 				B366FA8F1653311F00181A33 /* NewsViewController.m in Sources */,
-				B366FA901653311F00181A33 /* SecondLevelController.m in Sources */,
 				B366FA921653311F00181A33 /* ScheduleSlot.m in Sources */,
 				B366FA931653311F00181A33 /* Show.m in Sources */,
 				B366FA941653311F00181A33 /* main.m in Sources */,
@@ -908,8 +931,6 @@
 				B366FA961653311F00181A33 /* AudioStreamer.m in Sources */,
 				B366FA971653311F00181A33 /* LevelMeterView.m in Sources */,
 				B366FA981653311F00181A33 /* UIDevice+Hardware.m in Sources */,
-				B306F2BB16534A8300C2F399 /* StreamViewController.m in Sources */,
-				B306F2BF165351C500C2F399 /* OnAirNowViewController.m in Sources */,
 				B3ADB5F816538C1400637288 /* NewsPost.m in Sources */,
 				B3ADB5FB16538CBB00637288 /* Person.m in Sources */,
 				B3ADB5FE165396A600637288 /* NSString+NSStringAdditions.m in Sources */,
@@ -924,7 +945,12 @@
 				B3D305541654642300710843 /* UINavigationController+AKTabBarController.m in Sources */,
 				B3D305551654642300710843 /* UIViewController+AKTabBarController.m in Sources */,
 				B3D305C6165471CA00710843 /* BeamMinimalExampleProvider.m in Sources */,
-				B3D305CB165478F000710843 /* StreamManager.m in Sources */,
+				B3D305F81655942100710843 /* BeamMPMusicPlayerProvider.m in Sources */,
+				B3D305F91655942100710843 /* BeamMusicPlayerController.m in Sources */,
+				B3D305FA1655942100710843 /* BeamMusicPlayerViewController.m in Sources */,
+				B3D305FE1655944500710843 /* UIImageView+Reflection.m in Sources */,
+				B3D306011655945000710843 /* NSDateFormatter+Duration.m in Sources */,
+				B3D306041655945B00710843 /* AutoScrollLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1011,6 +1037,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 89D18248B72C446C80A3A4F7 /* Pods.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Devon Blandin (92M35RMHVG)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Devon Blandin (92M35RMHVG)";
 				COPY_PHASE_STRIP = NO;
@@ -1044,6 +1071,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 89D18248B72C446C80A3A4F7 /* Pods.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Devon Blandin";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Devon Blandin";
 				COPY_PHASE_STRIP = NO;

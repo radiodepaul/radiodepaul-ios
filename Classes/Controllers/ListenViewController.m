@@ -67,9 +67,15 @@ typedef enum {
 
 - (IBAction) buttonTouchUpInside:(id)sender {
     NSLog(@"Media Player");
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-
-    [self.navigationController pushViewController:appDelegate.beamViewController animated:YES];
+    
+    [AppDelegate sharedBeamViewController].backBlock = ^{
+        //[[[UIAlertView alloc] initWithTitle:@"Action" message:@"The Player's back button was pressed." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil] show];
+        [self.navigationController popViewControllerAnimated:YES];
+    };
+    
+    [self.navigationController pushViewController:[AppDelegate sharedBeamViewController] animated:YES];
+    [[AppDelegate sharedBeamViewController] reloadData];
+    
     //do as you please with buttonClicked.argOne
 }
 
@@ -83,6 +89,8 @@ typedef enum {
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    if ([onAirSlot.show.hosts count] == 0)
+        return 1;
     return 2;
 }
 
@@ -91,7 +99,11 @@ typedef enum {
     if (section == ScheduleSlotStats)
         return 8;
     else if (section == ScheduleSlotShowHosts)
+    {
+        NSLog(@"count of hosts: %d", [onAirSlot.show.hosts count]);
         [onAirSlot.show.hosts count];
+    }
+        
     
     return 0;
 }
@@ -275,6 +287,8 @@ typedef enum {
 
 - (void)objectLoader:(RKObjectLoader *)objectLoader didLoadObjects:(NSArray *)objects {
     self.onAirSlot = [objects objectAtIndex:0];
+    AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    app.onAirSlot = [objects objectAtIndex:0];
     
     [hud hide:true];
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f,

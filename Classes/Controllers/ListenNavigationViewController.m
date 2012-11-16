@@ -9,7 +9,6 @@
 #import "ListenNavigationViewController.h"
 #import "ListenViewController.h"
 #import "DisclosureDetailController.h"
-#import "StreamViewController.h"
 #import "ListenViewController.h"
 
 @interface ListenNavigationViewController ()
@@ -24,10 +23,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.title = @"Listen";
-    if (streamViewController == nil)
-    {
-        streamViewController = [[StreamViewController alloc] init];
-    }
 }
 
 - (void) viewDidAppear:(BOOL)animated

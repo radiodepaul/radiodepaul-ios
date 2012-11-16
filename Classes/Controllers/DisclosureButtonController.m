@@ -25,10 +25,17 @@
     [super viewDidLoad];
     self.navigationItem.title = [self.day capitalizedString];
     
-    [self loadSchedule];
+    
     [self.tableView addPullToRefreshWithActionHandler:^{
         [self loadSchedule];
     }];
+}
+
+- (void) viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    if (self.list == nil)
+        [self loadSchedule];
 }
 
 - (id) initWithDay:(NSString *) scheduleDay
