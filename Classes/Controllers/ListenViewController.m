@@ -97,14 +97,14 @@ typedef enum {
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == ScheduleSlotStats)
+    {
         return 8;
+    }
     else if (section == ScheduleSlotShowHosts)
     {
         NSLog(@"count of hosts: %d", [onAirSlot.show.hosts count]);
-        [onAirSlot.show.hosts count];
+        return [onAirSlot.show.hosts count];
     }
-        
-    
     return 0;
 }
 
@@ -146,6 +146,7 @@ typedef enum {
 {
     switch (indexPath.section)
     {
+        
         case ScheduleSlotStats:
             switch (indexPath.row)
             {
@@ -216,11 +217,11 @@ typedef enum {
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    if (indexPath.row >= 8)
+    if (indexPath.section == ScheduleSlotShowHosts)
     {
-        //Person *person = [onAirSlot.show.hosts objectAtIndex:indexPath.row - 8];
-        //PersonViewController *child = [[PersonViewController alloc] initWithPerson:person];
-        //[self.navigationController pushViewController:child animated:YES];
+        Person *person = [onAirSlot.show.hosts objectAtIndex:indexPath.row];
+        PersonViewController *child = [[PersonViewController alloc] initWithPerson:person];
+        [self.navigationController pushViewController:child animated:YES];
     }
 }
 
@@ -295,13 +296,12 @@ typedef enum {
                                                                            0.0f,
                                                                            self.view.bounds.size.width,
                                                                            self.view.bounds.size.width)];
-
     self.tableView.tableHeaderView = imageView;
     
-    self.photos = [[NSArray alloc] initWithObjects:[MWPhoto photoWithURL:onAirSlot.show.photo_large], nil];
+    //self.photos = [[NSArray alloc] initWithObjects:[MWPhoto photoWithURL:onAirSlot.show.photo_large], nil];
     
-    [(id)self.tableView.tableHeaderView setImageWithURL: onAirSlot.show.photo_medium
-                                   placeholderImage:[UIImage imageNamed:@"placeholder_medium"]];
+    [(id)self.tableView.tableHeaderView setImageWithURL: onAirSlot.show.photo_large
+                                   placeholderImage:[UIImage imageNamed:@"placeholder_large"]];
     
     [self.tableView.tableHeaderView.layer setBorderWidth:5.0f];
     [self.tableView.tableHeaderView.layer setBorderColor:[[UIColor whiteColor] CGColor]];

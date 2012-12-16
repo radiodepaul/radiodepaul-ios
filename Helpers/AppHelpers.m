@@ -10,7 +10,7 @@
 
 void AlertWithMessageAndDelegate(NSString *message, id theDelegate)
 {
-  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"News App" 
+  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Radio DePaul" 
                                                   message:message
                                                  delegate:theDelegate 
                                         cancelButtonTitle:@"OK" 

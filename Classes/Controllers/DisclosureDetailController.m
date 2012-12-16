@@ -168,12 +168,12 @@ typedef enum {
     if (hasRetinaDisplay)
     {
      [(id)self.tableView.tableHeaderView setImageWithURL: self.slot.show.photo_medium
-               placeholderImage:[UIImage imageNamed:@"placeholder_medium"]];
+               placeholderImage:[UIImage imageNamed:@"placeholder_large"]];
     }
     else
     {
-     [(id)self.tableView.tableHeaderView setImageWithURL:self.slot.show.photo_small
-               placeholderImage:[UIImage imageNamed:@"placeholder_small"]];
+     [(id)self.tableView.tableHeaderView setImageWithURL:self.slot.show.photo_medium
+               placeholderImage:[UIImage imageNamed:@"placeholder_medium"]];
     }
 
 

@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <HockeySDK/HockeySDK.h>
 #import "DSFingerTipWindow.h"
 #import "BeamMusicPlayerViewController.h"
 #import "BeamMPMusicPlayerProvider.h"
@@ -16,7 +15,7 @@
 @class StreamViewController;
 @class BeamMusicPlayerViewController;
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate, BITHockeyManagerDelegate, BITUpdateManagerDelegate, BITCrashManagerDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
 {
     AudioStreamer *streamer;
     ScheduleSlot *onAirSlot;

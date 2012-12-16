@@ -16,8 +16,12 @@
 #import "AppDelegate.h"
 #import "ScheduleSlot.h"
 #import "Show.h"
+#import "MBProgressHUD.h"
 
 @interface BeamMusicPlayerViewController()
+{
+    MBProgressHUD *hud;
+}
 
 @property (nonatomic,strong) IBOutlet MPVolumeView* volumeSlider; // Volume Slider
 @property (retain, nonatomic) IBOutlet UIView *volumeView;
@@ -156,6 +160,9 @@
 	NSURL *url = [NSURL URLWithString:@"http://rock.radio.depaul.edu:8000"];
 	streamer = [[AudioStreamer alloc] initWithURL:url];
     
+    hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.labelText = @"Loading";
+    
     [[NSNotificationCenter defaultCenter]
      addObserver:self
      selector:@selector(playbackStateChanged:)
@@ -228,6 +235,7 @@
 	{
 		if (appDelegate.uiIsVisible) {
 			[streamer setMeteringEnabled:YES];
+            [hud hide:true];
 		}
 	}
 	else if ([streamer isPaused]) {
@@ -366,8 +374,8 @@
                     
                     dispatch_async(dispatch_get_main_queue(), ^{
                         [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(setAlbumArtToPlaceholder) object:nil];
-                        [(id)self.albumArtImageView setImageWithURL: app.onAirSlot.show.photo_medium
-                    placeholderImage:[UIImage imageNamed:@"placeholder_medium"]];
+                        [(id)self.albumArtImageView setImageWithURL: app.onAirSlot.show.photo_large
+                    placeholderImage:[UIImage imageNamed:@"placeholder_large"]];
                         self.albumArtReflection.image = [self.albumArtImageView reflectedImageWithHeight:self.albumArtReflection.frame.size.height];
                     });
                 }

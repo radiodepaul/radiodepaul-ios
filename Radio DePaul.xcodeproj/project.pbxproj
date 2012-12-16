@@ -20,13 +20,11 @@
 		B34070B1165101CE002721F2 /* playbutton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B34070A9165101CE002721F2 /* playbutton@2x.png */; };
 		B34070B2165101CE002721F2 /* stopbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = B34070AA165101CE002721F2 /* stopbutton.png */; };
 		B34070B3165101CE002721F2 /* stopbutton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B34070AB165101CE002721F2 /* stopbutton@2x.png */; };
-		B34070C11651075A002721F2 /* HockeySDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B34070BF1651075A002721F2 /* HockeySDKResources.bundle */; };
-		B34070C21651075A002721F2 /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B34070C01651075A002721F2 /* HockeySDK.framework */; };
-		B34070C516511AA5002721F2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B34070C416511AA5002721F2 /* libPods.a */; };
 		B34A7AF71648B13E00CD245F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B34A7AF61648B13E00CD245F /* QuartzCore.framework */; };
 		B34A7AF91648B14400CD245F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B34A7AF81648B14400CD245F /* CFNetwork.framework */; };
 		B34A7AFB1648B14900CD245F /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B34A7AFA1648B14900CD245F /* AudioToolbox.framework */; };
 		B34A7AFD1648B14D00CD245F /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B34A7AFC1648B14D00CD245F /* MediaPlayer.framework */; };
+		B3662A301655EA0100CFF8AD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3662A2F1655EA0100CFF8AD /* libPods.a */; };
 		B366FA6616523FB400181A33 /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B366FA5A16523F1C00181A33 /* libRestKit.a */; };
 		B366FA6816523FC200181A33 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B366FA6716523FC200181A33 /* CoreData.framework */; };
 		B366FA6A16523FC800181A33 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B366FA6916523FC800181A33 /* MobileCoreServices.framework */; };
@@ -81,6 +79,7 @@
 		B39005E11650F2A5000905DB /* placeholder_thumb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B39005CD1650F2A5000905DB /* placeholder_thumb@2x.png */; };
 		B39005E21650F2A5000905DB /* square_large_default.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B39005CE1650F2A5000905DB /* square_large_default.jpg */; };
 		B39005F61650F4D5000905DB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B39005F11650F4D5000905DB /* InfoPlist.strings */; };
+		B3938ABC1674F72F0097A304 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B3938ABB1674F72F0097A304 /* Default-568h@2x.png */; };
 		B3958F521648BFDA00412C9E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3958F511648BFDA00412C9E /* AVFoundation.framework */; };
 		B3958FFE1649088D00412C9E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3958FFD1649088D00412C9E /* SystemConfiguration.framework */; };
 		B3959000164908A000412C9E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B3958FFF164908A000412C9E /* libz.dylib */; };
@@ -181,15 +180,13 @@
 		B34070A9165101CE002721F2 /* playbutton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "playbutton@2x.png"; sourceTree = "<group>"; };
 		B34070AA165101CE002721F2 /* stopbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stopbutton.png; sourceTree = "<group>"; };
 		B34070AB165101CE002721F2 /* stopbutton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stopbutton@2x.png"; sourceTree = "<group>"; };
-		B34070BF1651075A002721F2 /* HockeySDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = HockeySDKResources.bundle; path = Vendor/HockeySDKResources.bundle; sourceTree = "<group>"; };
-		B34070C01651075A002721F2 /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HockeySDK.framework; path = Vendor/HockeySDK.framework; sourceTree = "<group>"; };
-		B34070C416511AA5002721F2 /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "Pods/build/Release-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		B34A7AF61648B13E00CD245F /* QuartzCore.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B34A7AF81648B14400CD245F /* CFNetwork.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		B34A7AFA1648B14900CD245F /* AudioToolbox.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		B34A7AFC1648B14D00CD245F /* MediaPlayer.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		B3512F4C164FB7620030BF97 /* AppHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppHelpers.h; sourceTree = "<group>"; };
 		B3512F4D164FB7620030BF97 /* AppHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppHelpers.m; sourceTree = "<group>"; };
+		B3662A2F1655EA0100CFF8AD /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPods.a; sourceTree = "<group>"; };
 		B366FA4E16523F1C00181A33 /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = Vendor/RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
 		B366FA6716523FC200181A33 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		B366FA6916523FC800181A33 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -265,6 +262,7 @@
 		B39005F51650F4D5000905DB /* Radio DePaul-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Radio DePaul-Prefix.pch"; sourceTree = "<group>"; };
 		B39005F91650F654000905DB /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Classes/AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		B39005FA1650F654000905DB /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Classes/AppDelegate.m; sourceTree = SOURCE_ROOT; };
+		B3938ABB1674F72F0097A304 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		B3958F511648BFDA00412C9E /* AVFoundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		B3958FFD1649088D00412C9E /* SystemConfiguration.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B3958FFF164908A000412C9E /* libz.dylib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -327,7 +325,6 @@
 				B366FA6816523FC200181A33 /* CoreData.framework in Frameworks */,
 				B34A7AF91648B14400CD245F /* CFNetwork.framework in Frameworks */,
 				B366FA6616523FB400181A33 /* libRestKit.a in Frameworks */,
-				B34070C516511AA5002721F2 /* libPods.a in Frameworks */,
 				B38C88AC164C86620075A5F5 /* ImageIO.framework in Frameworks */,
 				B38C8909164CB5AD0075A5F5 /* MessageUI.framework in Frameworks */,
 				B317CCFB16488DF400E1FBE9 /* Foundation.framework in Frameworks */,
@@ -338,7 +335,7 @@
 				B3958FFE1649088D00412C9E /* SystemConfiguration.framework in Frameworks */,
 				B317CCF916488DF400E1FBE9 /* UIKit.framework in Frameworks */,
 				B3959000164908A000412C9E /* libz.dylib in Frameworks */,
-				B34070C21651075A002721F2 /* HockeySDK.framework in Frameworks */,
+				B3662A301655EA0100CFF8AD /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,8 +345,9 @@
 		B317CCE916488DF400E1FBE9 = {
 			isa = PBXGroup;
 			children = (
+				B3938ABB1674F72F0097A304 /* Default-568h@2x.png */,
+				B3662A2F1655EA0100CFF8AD /* libPods.a */,
 				B366FA4E16523F1C00181A33 /* RestKit.xcodeproj */,
-				B34070C416511AA5002721F2 /* libPods.a */,
 				B3C56AE61650D8530017F980 /* Vendor */,
 				B3512F4B164FB7620030BF97 /* Helpers */,
 				B3D32ADA1649F99000A76629 /* Classes */,
@@ -627,8 +625,6 @@
 				B3D5D08816545CEB003B3F81 /* DSFingerTipWindow.m */,
 				B3D5D07A16545846003B3F81 /* SVPullToRefresh */,
 				B37657A51650F9C700F6BCA5 /* MWPhotoBrowser */,
-				B34070BF1651075A002721F2 /* HockeySDKResources.bundle */,
-				B34070C01651075A002721F2 /* HockeySDK.framework */,
 				B3C56AE91650D8B20017F980 /* CocoaPods */,
 			);
 			name = Vendor;
@@ -863,10 +859,10 @@
 				B34070B1165101CE002721F2 /* playbutton@2x.png in Resources */,
 				B34070B2165101CE002721F2 /* stopbutton.png in Resources */,
 				B34070B3165101CE002721F2 /* stopbutton@2x.png in Resources */,
-				B34070C11651075A002721F2 /* HockeySDKResources.bundle in Resources */,
 				B3D305511654642300710843 /* AKTabBarController.bundle in Resources */,
 				B3D305F71655942100710843 /* BeamMusicPlayerController.bundle in Resources */,
 				B3D305FB1655942100710843 /* BeamMusicPlayerViewController.xib in Resources */,
+				B3938ABC1674F72F0097A304 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1055,6 +1051,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Vendor\"",
+					"\"$(SRCROOT)\"",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -1089,6 +1086,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Vendor\"",
+					"\"$(SRCROOT)\"",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",

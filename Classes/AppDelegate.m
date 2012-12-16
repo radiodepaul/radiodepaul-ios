@@ -22,6 +22,7 @@
 #import "NewsViewController.h"
 #import "InfoViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "AppHelpers.h"
 
 @implementation AppDelegate
 @synthesize rootController;
@@ -62,10 +63,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [[BITHockeyManager sharedHockeyManager] configureWithBetaIdentifier:@"a67815b310dd375403ce258a3b66da45"
-                                                         liveIdentifier:@"1051a7cc9c114e635a665febab9b8533"
-                                                               delegate:self];
-    //[[BITHockeyManager sharedHockeyManager] startManager];
  
     [RKClient clientWithBaseURLString:@"http://radiodepaul.herokuapp.com"];
     [RKObjectManager objectManagerWithBaseURLString:@"http://radiodepaul.herokuapp.com"];
@@ -144,14 +141,10 @@
 			break;
 	}
 }
-
-#pragma mark - BITUpdateManagerDelegate
-- (NSString *)customDeviceIdentifierForUpdateManager:(BITUpdateManager *)updateManager {
-#ifndef CONFIGURATION_AppStore
-    if ([[UIDevice currentDevice] respondsToSelector:@selector(uniqueIdentifier)])
-        return [[UIDevice currentDevice] performSelector:@selector(uniqueIdentifier)];
-#endif
-    return nil;
+- (void) presentAlertWithTitle:(NSString *) title
+{
+    NSString *message = [@"Sorry, " stringByAppendingString:title];
+    AlertWithMessageAndDelegate(message, self);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
