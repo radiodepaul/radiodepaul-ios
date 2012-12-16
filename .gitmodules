@@ -1,6 +1,0 @@
-[submodule "Vendor/RestKit"]
-	path = Vendor/RestKit
-	url = git://github.com/mwaterfall/MWPhotoBrowser.git
-[submodule "Vendor/MWPhotoBrowser"]
-	path = Vendor/MWPhotoBrowser
-	url = git://github.com/mwaterfall/MWPhotoBrowser.git
